@@ -1,0 +1,118 @@
+* {
+  --size: calc(1vw + 1vh);
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: rgb(31, 31, 31);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.posts {
+  width: 75%;
+  color: rgb(248, 248, 242);
+}
+.posts__list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0 calc(var(--size) * 3.1);
+  margin-bottom: calc(var(--size) * 2);
+}
+.posts__item {
+  flex: 0 1 23%;
+  padding: calc(var(--size) * 8) var(--size) var(--size) var(--size);
+  height: calc(var(--size) * 14);
+  border-radius: var(--size);
+  overflow: hidden;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font: 400 calc(var(--size) * 0.7)/1.5 "Arial", sans-serif;
+}
+
+.posts__item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--size) * 7);
+  object-fit: cover;
+}
+
+.posts__pagination {
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 var(--size);
+  font: 400 calc(var(--size) * 0.8)/1.5 "Arial", sans-serif;
+}
+
+.pagination__list {
+  flex: 0 1 calc(var(--size) * 40);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 var(--size);
+}
+
+.pagination button,
+.pagination__item {
+  flex: 0 1 calc(var(--size) * 2);
+  min-height: calc(var(--size) * 2);
+}
+.pagination__item a, .pagination button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.6s ease 0s;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.pagination button {
+  border: none;
+  color: rgb(31, 31, 31);
+  background-color: rgb(195, 197, 81);
+  font-size: calc(var(--size) * 1.2);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: rgb(248, 248, 242);
+  transform: scale(1.1);
+}
+
+.pagination button:active {
+  transform: scale(0.9);
+}
+
+.pagination__item a {
+  text-decoration: none;
+  color: rgb(248, 248, 242);
+}
+
+.pagination__item:not(.active) > a:hover {
+  color: rgb(31, 31, 31);
+  background-color: rgb(248, 248, 242);
+}
+
+.active a {
+  background-color: rgb(195, 197, 81);
+  color: rgb(31, 31, 31);
+  font-weight: 600;
+}
